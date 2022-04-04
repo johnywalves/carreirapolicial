@@ -251,8 +251,13 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        color: var(--color-highlight);
         background-color: var(--color-background-header);
+    }
+
+    header a,
+    header a:hover,
+    header a:visited {
+        color: var(--color-text);
     }
 
     header p {
@@ -273,7 +278,6 @@
     header li {
         font-size: 1.6rem;
     }
-
 
     @media only screen and (max-width: 980px) {
         body {
