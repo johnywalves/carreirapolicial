@@ -180,6 +180,7 @@
     }
 
     ol.questions>li>ol>p,
+    ol.questions>li>ol>table,
     ol.questions>li>ul>p {
         display: block;
         padding: 1.5rem;
@@ -187,6 +188,24 @@
         overflow: hidden;
         background-color: var(--color-background-highlight);
         transition: all 0.3s;
+    }
+
+    ol.questions>li>ol>table {
+        width: 100%;
+        margin: 0.5rem auto 0 auto;
+        border-collapse: collapse;
+    }
+
+    ol.questions>li>ol>table caption {
+        width: 100%;
+        margin: 0 0 0.5rem 0;
+    }
+
+    ol.questions>li>ol>table th,
+    ol.questions>li>ol>table td {
+        padding: 0.5rem 0.8rem;
+        border: 0.2rem var(--color-text) solid;
+        text-align: center;
     }
 
     ol.questions>li>ol>p>span::before,
@@ -199,8 +218,8 @@
     }
 
     ol.questions>li:not(.answered)>ol>p,
+    ol.questions>li:not(.answered)>ol>table,
     ol.questions>li:not(.answered)>ul>p {
-        display: none;
         max-height: 0;
         padding: 0;
     }
@@ -1472,8 +1491,7 @@
                 <li id="PCSP2013-61">
                     <p>
                         Sobre as tabelas de verdade dos conectivos de disjunção (inclusiva), conjunção e implicação
-                        (material),
-                        assinale a alter nativa correta.
+                        (material), assinale a alter nativa correta.
                         <a href="#PCSP2013-61">#</a>
                     </p>
                     <ol>
@@ -1486,11 +1504,8 @@
                     <button>Solução</button>
                 </li>
                 <p>Para as questões de números <strong>62</strong> a <strong>64</strong>, considere a seguinte notação
-                    para
-                    os
-                    conectivos lógicos: ~ (para a negação), ∨ (para a disjunção inclusiva), & (para a conjunção) e ⊃
-                    (para a
-                    implicação material).</p>
+                    para os conectivos lógicos: ~ (para a negação), ∨ (para a disjunção inclusiva), & (para a conjunção)
+                    e ⊃ (para a implicação material).</p>
                 <li id="PCSP2013-62">
                     <p>
                         Considerando que A e B representam enunciados verdadeiros e M e N representam enunciados falsos,
@@ -1499,13 +1514,110 @@
                     </p>
                     <p class="center">(A & ~M) ⊃ (~B ∨ N)</p>
                     <ol>
+                        <p>
+                            <strong>~ (negação)</strong><br />também conhecido como <strong>não</strong> se p verdadeiro
+                            é ~p falso e p falso é ~p é verdadeiro<br /><br />
+                            <strong>∨ (disjunção inclusiva)</strong><br />também conhecido como <strong>ou</strong> p ∨
+                            q verdadeiro caso p, q ou ambos verdadeiros<br /><br />
+                            <strong>& (conjunção)</strong><br />também conhecido como <strong>e</strong> p & q
+                            verdadeiro ambos verdadeiros<br /><br />
+                            <strong>⊃ (implicação material)</strong><br />também conhecido como <strong>se .. então
+                                ...</strong> p ⊃ q falso quando p verdadeiro e q falso e verdade para os outros
+                            casos
+                        </p>
+                        <table>
+                            <caption>Tabela Verdade <strong>(A & ~M) ⊃ (~B ∨ N)</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>M</th>
+                                    <th>N</th>
+                                    <th>~M</th>
+                                    <th>~N</th>
+                                    <th>A & ~M</th>
+                                    <th>~B ∨ N</th>
+                                    <th>(A & ~M) ⊃ (~B ∨ N)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>F</td>
+                                    <td>F</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>F</td>
+                                    <td>F</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <span>Por contato a resposta é Falsa</span>
+                        </p>
                         <li>O mesmo valor de A ∨ B.</li>
+                        <table>
+                            <caption>Tabela Verdade <strong>A ∨ B</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>A ∨ B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <span>Verdadeira diferente da questão</span>
+                        </p>
                         <li>O valor de verdade não pode ser determinado.</li>
+                        <p>
+                            <span>Pode ser determinado e é falso</span>
+                        </p>
                         <li>Verdadeiro.</li>
+                        <p>
+                            <span>Verdadeira diferente da questão</span>
+                        </p>
                         <li class="right">Falso.</li>
+                        <p>
+                            <span>Falsa como na tabela verdade da questão</span>
+                        </p>
                         <li>O mesmo valor de ~M & ~N.</li>
+                        <table>
+                            <caption>Tabela Verdade <strong>~M & ~N</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th>M</th>
+                                    <th>N</th>
+                                    <th>~M</th>
+                                    <th>~N</th>
+                                    <th>~M & ~N</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>F</td>
+                                    <td>F</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <span>Verdadeira diferente da questão</span>
+                        </p>
                     </ol>
                     <button>Solução</button>
+                    <button>Resolução</button>
                 </li>
                 <li id="PCSP2013-63">
                     <p>
@@ -1513,6 +1625,9 @@
                         <a href="#PCSP2013-63">#</a>
                     </p>
                     <ol>
+                        <p>
+                            <span>Um tautologia é quanto a tabela verdade inteira é verdade</span>
+                        </p>
                         <li>X ⊃ (X & Y)</li>
                         <li>~X & ~~X</li>
                         <li class="right">Y ⊃ (X ⊃ Y)</li>
@@ -1520,6 +1635,7 @@
                         <li>Y ⊃ (Y ⊃ X)</li>
                     </ol>
                     <button>Solução</button>
+                    <button>Resolução</button>
                 </li>
                 <li id="PCSP2013-64">
                     <p>
@@ -1528,6 +1644,43 @@
                     </p>
                     <p class="center">~P ∨ Q</p>
                     <ol>
+                        <table>
+                            <caption>Tabela Verdade <strong>~P ∨ Q</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th>P</th>
+                                    <th>Q</th>
+                                    <th>~P</th>
+                                    <th>~P ∨ Q</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>F</td>
+                                    <td>F</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>F</td>
+                                    <td>F</td>
+                                    <td>F</td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                    <td>V</td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td>F</td>
+                                    <td>V</td>
+                                    <td>F</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <li class="right">P ⊃ Q</li>
                         <li>(P ∨ ~Q) ⊃ Q</li>
                         <li>(P & Q) ⊃ P</li>
@@ -1535,6 +1688,7 @@
                         <li>P & ~Q</li>
                     </ol>
                     <button>Solução</button>
+                    <button>Resolução</button>
                 </li>
                 <li id="PCSP2013-65">
                     <p>
@@ -1726,11 +1880,13 @@
                             e pobreza estão ligadas ao crime.</li>
                         <li>Foi escritor, criou a teoria da escola clássica da criminologia; utilizou o método lógico
                             dedutível.</li>
-                        <li>Publicou o livro <em>O Homem Delinquente</em> em 1876, descrevendo o determinismo biológico como
+                        <li>Publicou o livro <em>O Homem Delinquente</em> em 1876, descrevendo o determinismo biológico
+                            como
                             fonte da personalidade criminosa.</li>
                         <li>Foi jurista, afirmou que o crime estava no homem e que se revelava como degeneração deste.
                         </li>
-                        <li class="right">Foi autor da obra <em>Sociologia Criminal</em>; para ele a criminalidade deriva de fenômenos
+                        <li class="right">Foi autor da obra <em>Sociologia Criminal</em>; para ele a criminalidade
+                            deriva de fenômenos
                             antropológicos, físicos e sociais.</li>
                     </ol>
                     <button>Solução</button>
@@ -1799,7 +1955,8 @@
                 </li>
                 <li id="PCSP2014-9">
                     <p>
-                        A teoria do <em>labelling</em> approach é uma das mais importantes teorias do conflito. Surgiu na
+                        A teoria do <em>labelling</em> approach é uma das mais importantes teorias do conflito. Surgiu
+                        na
                         década de 60 nos Estados Unidos da América e tem, como um de seus principais autores, Howard
                         Becker.<br />
                         Essa teoria também é conhecida como teoria
@@ -1832,12 +1989,14 @@
                 </li>
                 <li id="PCSP2014-11">
                     <p>
-                        Nos crimes de extorsão mediante sequestro, por exemplo, pode ocorrer a chamada <em>Síndrome de Estocolmo</em>, que consiste
+                        Nos crimes de extorsão mediante sequestro, por exemplo, pode ocorrer a chamada <em>Síndrome de
+                            Estocolmo</em>, que consiste
                         <a href="#PCSP2014-11">#</a>
                     </p>
                     <ol>
                         <li>na doença que os sequestradores sofrem.</li>
-                        <li class="right">na identificação afetiva da vítima com o criminoso, pelo próprio instinto de sobrevivência.
+                        <li class="right">na identificação afetiva da vítima com o criminoso, pelo próprio instinto de
+                            sobrevivência.
                         </li>
                         <li>em uma teoria que os órgão públicos utilizam para reduzir a criminalidade.</li>
                         <li>no arrependimento do criminoso em razão do descontrole emocional.</li>
@@ -1949,14 +2108,16 @@
                             vice-versa.
                         </li>
                         <li>inimputável pela lei penal, também conhecido doutrinariamente por oligofrênico.</li>
-                        <li class="right">semi-imputável pela lei penal, pois seu estado psicológico situa-se na zona limítrofe entre
+                        <li class="right">semi-imputável pela lei penal, pois seu estado psicológico situa-se na zona
+                            limítrofe entre
                             a higidez e a insanidade mental.</li>
                     </ol>
                     <button>Solução</button>
                 </li>
                 <li id="PCSP2014-19">
                     <p>
-                        Médico legista, psiquiatra e antropólogo brasileiro, considerado o <em>Lombroso dos Trópicos</em>. A
+                        Médico legista, psiquiatra e antropólogo brasileiro, considerado o <em>Lombroso dos
+                            Trópicos</em>. A
                         personalidade mencionada refere-se a
                         <a href="#PCSP2014-19">#</a>
                     </p>
@@ -2137,7 +2298,8 @@
                         <li>certeza de um indivíduo delinquir, em razão de dados estatísticos coletados.</li>
                         <li>probabilidade de um indivíduo delinquir, em razão de dados estatísticos coletados.</li>
                         <li>certeza de um criminoso reincidir, em razão de dados estatísticos coletados.</li>
-                        <li class="right">probabilidade de um criminoso reincidir, em razão de dados estatísticos coletados.</li>
+                        <li class="right">probabilidade de um criminoso reincidir, em razão de dados estatísticos
+                            coletados.</li>
                         <li>avaliação médica imediata e preliminar acerca de uma enfermidade ou estado psicológico, com
                             base
                             na observação momentânea do criminoso.</li>
